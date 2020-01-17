@@ -36,17 +36,9 @@ public class CsvWriter {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (null != write) {
-                    write.close();
-                }
-                if (null != bw) {
-                    bw.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+		try { if (write != null) write.close(); }
+		finally { if (bw != null) bw.close(); }
+	}
 
     }
 
